@@ -39,7 +39,7 @@ export class Contract {
 }
 
 function toFragment(abi: JsonFragment[] | string[] | Fragment[]): Fragment[] {
-  return abi.map((item: JsonFragment | string | Fragment) => utils.Fragment.from(item));
+  return abi.map((item: JsonFragment | string | Fragment) => utils.Fragment.from(item)).filter(o => o);
 }
 
 function makeCallFunction(contract: Contract, name: string) {
